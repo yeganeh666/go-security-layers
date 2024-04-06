@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-var auditLogFilePath = "./audit-log.txt"
+var auditLogFilePath = "./logs/audit-log.txt"
 
 func AuditEvent(method, path, username, ip string) {
 	logEntry := fmt.Sprintf("Time: %s, Method: %s, Path: %s, Username:%s, IP: %s\n",

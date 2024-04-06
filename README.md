@@ -33,7 +33,7 @@ This document provides an overview of the security considerations and implementa
 
 - Each request is logged for auditing purposes.
 - Logs include information such as timestamp, request method, requested path, user, and IP address.
-- Logs are stored in a separate file (`audit-log.txt`) for traceability.
+- Logs are stored in a separate file (`/logs/audit-log.txt`) for traceability.
 
 ### 5. OAuth2 Integration
 - OAuth2 authentication is supported for third-party authentication.
