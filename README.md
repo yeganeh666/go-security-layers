@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="https://adriancitu.com/wp-content/uploads/2021/07/apisecuritycontrols.png" alt="Alt Text">
+</p>
 This document provides an overview of the security considerations and implementations within the project. It covers authentication, authorization, encryption, rate limiting, and audit logging.
 
 ## Security Measures Implemented
