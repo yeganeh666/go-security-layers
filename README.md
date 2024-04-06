@@ -49,10 +49,24 @@ This document provides an overview of the security considerations and implementa
     - Additional directives can be added based on specific requirements.
 
 
-### Deployment with Nginx and Apache Servers
+## Deployment with Nginx and Apache Servers
 
 This project can be deployed with NGINX or Apache web servers acting as reverse proxies to handle incoming requests and route them to the Go application container.
 
+### Security Measures Implemented in Nginx
+
+1. **HTTPS Redirection**: All incoming HTTP requests are automatically redirected to HTTPS to ensure secure communication between clients and the server.
+
+2. **HTTP Strict Transport Security (HSTS)**: The server enforces HSTS headers, instructing browsers to only connect to the website via HTTPS, thereby mitigating potential downgrade attacks.
+
+3. **Security Headers**:
+  - **X-Content-Type-Options**: Prevents MIME-sniffing attacks by restricting the browser from guessing the content type.
+  - **X-Frame-Options**: Protects against clickjacking attacks by denying the rendering of the website within a frame or iframe.
+  - **X-XSS-Protection**: Enables built-in cross-site scripting (XSS) protection in modern browsers, further safeguarding against XSS attacks.
+
+4. **Proxying to Application**: Nginx acts as a reverse proxy, forwarding incoming requests to the backend Go application running on port 8080. This setup adds an additional layer of security by hiding the application server from direct external access.
+
+5. **Deny Access to Hidden Files**: Nginx is configured to deny access to hidden files, preventing potential information disclosure or access to sensitive system files.
 
 
 #### Disclaimer
